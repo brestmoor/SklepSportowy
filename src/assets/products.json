@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Bluza Adidas",
+    "description": "Do użytku zewnętrznego",
+    "price": 234.00,
+    "category": "Bluzy"
+  },
+  {
+    "name": "Buty Adidas",
+    "description": "Odporne na zniszczenie",
+    "price": 144.00,
+    "category": "Buty"
+  },
+  {
+    "name": "Podkoszulek",
+    "description": "Biały",
+    "price": 53.00,
+    "category": "Podkoszulki"
+  }
+]
