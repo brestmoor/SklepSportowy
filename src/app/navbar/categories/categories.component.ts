@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../data.service";
+import {DataService} from "../../data.service";
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css'],
+  templateUrl: './categories.component.html',
+  styleUrls: ['./categories.component.css'],
   providers: [DataService]
 })
-export class NavbarComponent implements OnInit {
+export class CategoriesComponent implements OnInit {
 
   categories: string[] = [];
 

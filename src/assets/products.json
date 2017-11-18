@@ -16,5 +16,17 @@
     "description": "Biały",
     "price": 53.00,
     "category": "Podkoszulki"
+  },
+  {
+    "name": "Buty Nike",
+    "description": "Piłkarskie",
+    "price": 150.00,
+    "category": "Buty"
+  },
+  {
+    "name": "Podkoszulek",
+    "description": "Czarny",
+    "price": 42.00,
+    "category": "Podkoszulki"
   }
 ]

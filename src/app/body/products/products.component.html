@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="products">
+    <div *ngFor="let product of currentProducts">
+      <app-product [product]="product"></app-product>
+    </div>
+  </div>
+  <div class="navbar-wrapper">
+    <nav aria-label="Page navigation example" class="nav">
+      <ul class="pagination">
+        <li class="page-item" [class.disabled]="currentSubtab == 1">
+          <a class="page-link" href="#" (click)="previousSubtab()">Previous</a>
+        </li>
+        <li class="page-item" *ngFor="let subtabNo of subtabs" [class.active] = "currentSubtab == subtabNo">
+          <a class="page-link" (click)="reloadSubtab(subtabNo)" href="#">{{subtabNo}}</a>
+        </li>
+        <li class="page-item" [class.disabled]="currentSubtab == subtabs.length">
+          <a class="page-link" href="#" (click)="nextSubtab()">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
