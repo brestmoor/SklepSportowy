@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import {Subject} from "rxjs/Subject";
+import {Product} from "./types";
+import * as _ from "underscore";
 
 @Injectable()
 export class CartService {
 
-  products: Map<Product, number> = new Map();
+  products: Product[] = [];
 
   private itemAddedSource = new Subject<Product>();
   private itemRemovedSource = new Subject<Product>();
@@ -13,16 +15,24 @@ export class CartService {
   public itemRemoved = this.itemRemovedSource.asObservable();
 
   public addItem(product: Product) {
-    this.products.set(product, (isNaN(this.products.get(product))) ? 1 : this.products.get(product) + 1);
+    this.products.push(product);
     this.itemAddedSource.next(product);
   }
 
   public removeItem(toBeRemoved: Product) {
-    this.products.set(toBeRemoved, this.products.get(toBeRemoved) -1);
+    let index = this.products.findIndex(product => product.name == toBeRemoved.name);
+    this.products.splice(index, 1);
     this.itemRemovedSource.next(toBeRemoved);
   }
 
   public getNumber(product: Product) {
-    return this.products.get(product) || 0;
+    return this.products.reduce((first, second) => first + (second.name == product.name ? 1 : 0), 0)
+  }
+
+  public getAsMap() {
+    let productsMap = new Map();
+     _.uniq(this.products, product => product.name )
+      .forEach(product => productsMap.set(new Product('l', 'l', 2, 'l'), 1))
+    return productsMap;
   }
 }

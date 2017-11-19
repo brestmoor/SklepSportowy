@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CartService} from "../../../cart.service";
+import {Product, ProductAndNumber} from "../../../types";
 
 @Component({
   selector: 'app-product',
@@ -19,7 +20,8 @@ export class ProductComponent implements OnInit {
 
   addToCart() {
     if (this.number > 0) {
-      this.cartService.addItem(this.productAndNumber.product);
+      this.cartService.addItem(this.product);
+      console.log('dodaje' + this.product.name);
       this.number --;
     }
   }

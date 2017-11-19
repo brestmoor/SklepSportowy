@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import {Http} from "@angular/http";
+import {ProductAndNumber} from "./types";
 
 @Injectable()
 export class DataService {

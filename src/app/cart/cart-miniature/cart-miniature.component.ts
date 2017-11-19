@@ -27,10 +27,8 @@ export class CartMiniatureComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.itemsNumber = Array.from(this.cartService.products.values()).reduce((first, second) => first + second, 0);
-    this.pricesSum = Array.from(this.cartService.products.keys())
-      .map(product => product.price * this.cartService.products.get(product))
-      .reduce((firstPrice, secondPrice) => firstPrice + secondPrice, 0)
+    this.itemsNumber = this.cartService.products.length;
+    this.pricesSum = this.cartService.products.reduce((first, second) =>  first + second.price, 0)
   }
 
 }

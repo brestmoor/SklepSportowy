@@ -4,13 +4,18 @@
       <table class="table">
         <thead>
         <th scope="col">Ilość</th>
-        <th scope="col">Nazwa</th>
+        <th scope="col" colspan="3">Nazwa</th>
         <th scope="col">Cena</th>
         <th scope="col">Wartość</th>
         <th scope="col"></th>
         </thead>
         <tbody>
-        <td>lala</td>
+        <tr *ngFor="let product of products.keys()">
+          <td>{{products.get(product)}}</td>
+          <td colspan="3">{{product.name}}</td>
+          <td>{{product.price}}</td>
+          <td>{{products.get(product) * product.price}}</td>
+        </tr>
         </tbody>
       </table>
     </div>

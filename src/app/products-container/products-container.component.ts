@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../data.service";
+import {ProductAndNumber} from "../types";
 
 @Component({
   selector: 'app-products-container',
