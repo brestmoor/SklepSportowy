@@ -14,9 +14,9 @@ export class DataService {
       .then(response => response.json() as string[])
   }
 
-  getProducts():Promise<Product[]> {
+  getProducts():Promise<ProductAndNumber[]> {
     return this.http.get('../assets/products.json')
       .toPromise()
-      .then(response => response.json() as Product[])
+      .then(response => response.json() as ProductAndNumber[])
   }
 }

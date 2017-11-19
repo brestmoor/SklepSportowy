@@ -1,0 +1,31 @@
+.product {
+  margin-bottom: 7px;
+  margin-top: 3px;
+}
+
+.price {
+  display: flex;
+  justify-content: center;
+}
+
+.price-child {
+  align-self: flex-end;
+}
+
+.price-number {
+  margin-bottom: 1px;
+}
+
+.plus-minus {
+  transition: all .2s ease-in;
+  cursor: pointer;
+}
+
+.plus-minus:hover {
+  color: #a3a3a3
+}
+
+.plus-minus-disactive {
+  color: #cccccc;
+  cursor: not-allowed;
+}

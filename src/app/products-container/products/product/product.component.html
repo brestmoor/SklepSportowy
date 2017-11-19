@@ -1,0 +1,24 @@
+<div class="card product">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-8">
+        <h5>{{product.name}}</h5><br>
+        {{product.description}}
+      </div>
+      <div class="col-2 price">
+        <div class="price-child price-number">Produktów: {{number}}</div>
+      </div>
+      <div class="col-1 price">
+        <div class="price-child unselectable">
+          <i class="fa fa-plus plus-minus" [class.plus-minus-disactive] = "number == 0 " (click)="addToCart()" style="margin-right: 2px"></i>
+          <i class="fa fa-minus plus-minus" [class.plus-minus-disactive] = "isCartEmpty()" (click)="removeFromCart()"></i>
+        </div>
+      </div>
+      <div class="col-1 price">
+        <div class="price-child price-number">
+          {{product.price}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

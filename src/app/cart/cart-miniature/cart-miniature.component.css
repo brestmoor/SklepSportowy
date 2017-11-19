@@ -1,0 +1,18 @@
+.mini-cart-info-container {
+  display:inline-block;
+  font-size: 14px;
+}
+
+.cart-container {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0px;
+}
+
+.basket {
+  color: black;
+}
+
+.basket:hover {
+  color: #313131;
+}

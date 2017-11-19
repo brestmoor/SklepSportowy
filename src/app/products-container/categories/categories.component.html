@@ -1,0 +1,3 @@
+<div *ngFor="let category of categories; let i = index">
+  <app-category [category] = "category" [active]="setCategory == category" (onChosen)="onChosen($event)"></app-category>
+</div>

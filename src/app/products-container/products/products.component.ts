@@ -1,24 +1,27 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {DataService} from "../../data.service";
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
-  providers: [DataService]
 })
-export class ProductsComponent implements OnInit {
-  @Input()
-  products: Product[] = [];
-  subtabs: number[];
-  currentProducts: Product[] = [];
-  currentSubtab: number;
+export class ProductsComponent implements OnChanges {
+  @Input('storeProducts')
+  products: ProductAndNumber[];
 
-  ngOnInit() {
-      let subtabsNo = (Math.ceil(this.products.length / 3));
-      this.subtabs = Array.from({length: subtabsNo}, (v, k) => k + 1);
-      this.currentProducts = this.products.slice(0, 3);
-      this.currentSubtab = 1;
+  subtabs: number[];
+
+  currentProducts: ProductAndNumber[] = [];
+  currentSubtab: number;
+  constructor() {
+
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    let subtabsNo = (Math.ceil(this.products.length / 3));
+    this.subtabs = Array.from({length: subtabsNo}, (v, k) => k + 1);
+    this.currentProducts = this.products.slice(0, 3);
+    this.currentSubtab = 1;
   }
 
   public reloadSubtab(subtabNo: number) {

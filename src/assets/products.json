@@ -1,32 +1,47 @@
 [
   {
-    "name": "Bluza Adidas",
-    "description": "Do użytku zewnętrznego",
-    "price": 234.00,
-    "category": "Bluzy"
+    "product": {
+      "name": "Bluza Adidas",
+      "description": "Do użytku zewnętrznego",
+      "price": 234.00,
+      "category": "Bluzy"
+    },
+    "number": 5
   },
   {
-    "name": "Buty Adidas",
-    "description": "Odporne na zniszczenie",
-    "price": 144.00,
-    "category": "Buty"
+    "product": {
+      "name": "Buty Adidas",
+      "description": "Odporne na zniszczenie",
+      "price": 144.00,
+      "category": "Buty"
+    },
+    "number": 1
   },
   {
-    "name": "Podkoszulek",
-    "description": "Biały",
-    "price": 53.00,
-    "category": "Podkoszulki"
+    "product": {
+      "name": "Podkoszulek",
+      "description": "Biały",
+      "price": 53.00,
+      "category": "Podkoszulki"
+    },
+    "number": 1
   },
   {
-    "name": "Buty Nike",
-    "description": "Piłkarskie",
-    "price": 150.00,
-    "category": "Buty"
+    "product": {
+      "name": "Buty Nike",
+      "description": "Piłkarskie",
+      "price": 150.00,
+      "category": "Buty"
+    },
+    "number": 1
   },
   {
-    "name": "Podkoszulek",
-    "description": "Czarny",
-    "price": 42.00,
-    "category": "Podkoszulki"
+    "product": {
+      "name": "Podkoszulek",
+      "description": "Czarny",
+      "price": 42.00,
+      "category": "Podkoszulki"
+    },
+    "number": 1
   }
 ]
