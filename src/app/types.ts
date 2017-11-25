@@ -10,3 +10,8 @@ export class ProductAndNumber {
   constructor(public product: Product, public number:number) {
   }
 }
+
+export class User {
+  constructor(public nameAndSurname: string, public address: string) {
+  }
+}
