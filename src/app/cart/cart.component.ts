@@ -12,19 +12,30 @@ import {Product} from "../types";
 })
 export class CartComponent implements OnInit {
 
-  products: Map<Product, number> = new Map();
+  idsMap: Map<number, number> = new Map();
+  products: Product[];
 
-  constructor(private cartService: CartService, private cdr: ChangeDetectorRef) { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
-    _.uniq(this.cartService.products, product => product.name )
-      .forEach(product => this.products.set(new Product('l', 'l', 2, 'l'), 1))
-    console.log(this.cartService.products)
+    let uniqueProducts = _.uniq(this.cartService.products, product => product.id );
+    this.products = uniqueProducts;
+
+    uniqueProducts
+      .forEach(product => this.idsMap.set(product.id, this.findOccurences(product.id)));
   }
 
-  findOccurences(name: string) {
+  public remove(product: Product) {
+    this.cartService.removeItem(product)
+    this.idsMap.set(product.id, this.idsMap.get(product.id) - 1)
+    if(this.idsMap.get(product.id) == 0) {
+      this.products.splice(this.products.findIndex(item => item.id == product.id), 1);
+    }
+  }
+
+  findOccurences(id: number) {
     return this.cartService.products
-      .filter(product => product.name == name)
+      .filter(product => product.id == id)
       .length
   }
 

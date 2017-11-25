@@ -20,19 +20,12 @@ export class CartService {
   }
 
   public removeItem(toBeRemoved: Product) {
-    let index = this.products.findIndex(product => product.name == toBeRemoved.name);
+    let index = this.products.findIndex(product => product.id == toBeRemoved.id);
     this.products.splice(index, 1);
     this.itemRemovedSource.next(toBeRemoved);
   }
 
   public getNumber(product: Product) {
-    return this.products.reduce((first, second) => first + (second.name == product.name ? 1 : 0), 0)
-  }
-
-  public getAsMap() {
-    let productsMap = new Map();
-     _.uniq(this.products, product => product.name )
-      .forEach(product => productsMap.set(new Product('l', 'l', 2, 'l'), 1))
-    return productsMap;
+    return this.products.reduce((first, second) => first + (second.id == product.id ? 1 : 0), 0)
   }
 }

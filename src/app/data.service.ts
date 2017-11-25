@@ -10,13 +10,13 @@ export class DataService {
   }
 
   getCategories():Promise<string[]> {
-    return this.http.get('../assets/categories.json')
+    return this.http.get('https://sklepsportowy-ztw.firebaseio.com/categories.json')
       .toPromise()
       .then(response => response.json() as string[])
   }
 
   getProducts():Promise<ProductAndNumber[]> {
-    return this.http.get('../assets/products.json')
+    return this.http.get('https://sklepsportowy-ztw.firebaseio.com/products.json')
       .toPromise()
       .then(response => response.json() as ProductAndNumber[])
   }

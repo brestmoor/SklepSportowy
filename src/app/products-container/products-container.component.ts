@@ -9,13 +9,28 @@ import {ProductAndNumber} from "../types";
   providers: [DataService]
 })
 export class ProductsContainerComponent implements OnInit {
-
+  allproducts: ProductAndNumber[];
   products: ProductAndNumber[] = [];
+
   categories: string[] = [];
 
-  allproducts: ProductAndNumber[];
+  criteria: string = "";
+  priceFrom: number;
+  priceTo: number;
 
   constructor(private dataService: DataService) {
+  }
+
+  setSearchCriteria(criteria: string) {
+    this.criteria = criteria;
+  }
+
+  setPriceFrom(priceFrom: number) {
+    this.priceFrom = priceFrom;
+  }
+
+  setPriceTo(priceTo: number) {
+    this.priceTo = priceTo;
   }
 
   ngOnInit() {

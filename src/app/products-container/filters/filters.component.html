@@ -1,0 +1,18 @@
+<div>
+  <div class="row" style="margin-top: 10px">
+    <div class="col-12">Price filter:<br></div>
+  </div>
+  <div class="row filters-row" >
+    <div class="col-2 filters-label">From:</div>
+    <div class="col-4 filters-input"><input type="number" class="form-control" [ngModel]="priceFrom" (ngModelChange)="priceFromSet($event)"></div>
+    <div class="col-2 filters-label">To:</div>
+    <div class="col-4 filters-input"><input type="number" class="form-control" [ngModel]="priceTo" (ngModelChange)="priceToSet($event)"></div>
+  </div>
+  <div class="row">
+    <div class="col-12" style="margin-top: 15px">
+      <input type="text" class="form-control" placeholder="search" [ngModel]="searchCriteria" (ngModelChange)="searchCriteriaSet($event)"/>
+    </div>
+  </div>
+</div>
+
+

@@ -12,10 +12,19 @@ import {RouterModule, Routes} from "@angular/router";
 import { CartComponent } from './cart/cart.component';
 import { CartMiniatureComponent } from './cart/cart-miniature/cart-miniature.component';
 import {CartService} from "./cart.service";
+import { MakeOrderComponent } from './make-order/make-order.component';
+import {FormsModule} from "@angular/forms";
+import { FiltersComponent } from './products-container/filters/filters.component';
+import { StringContainsPipe } from './string-contains.pipe';
+import { GetProductsForSubTabPipe } from './get-products-for-sub-tab.pipe';
+import { PriceFromPipe } from './price-from.pipe';
+import { PriceToPipe } from './price-to.pipe';
+import { SaveResultToVariablePipe } from './save-result-to-variable.pipe';
 
 const appRoutes: Routes = [
   {path: '', component: ProductsContainerComponent},
-  {path: 'cart', component: CartComponent}
+  {path: 'cart', component: CartComponent},
+  {path: 'makeOrder', component: MakeOrderComponent}
 ];
 
 @NgModule({
@@ -28,11 +37,18 @@ const appRoutes: Routes = [
     CategoryComponent,
     CartComponent,
     CartMiniatureComponent,
-    CartMiniatureComponent,
+    MakeOrderComponent,
+    FiltersComponent,
+    StringContainsPipe,
+    GetProductsForSubTabPipe,
+    PriceFromPipe,
+    PriceToPipe,
+    SaveResultToVariablePipe,
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: true}

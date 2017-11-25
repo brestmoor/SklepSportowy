@@ -1,0 +1,17 @@
+.filters-row {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px
+}
+
+.filters-label {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.filters-input {
+  padding-left: 4px;
+  padding-right: 4px;
+}

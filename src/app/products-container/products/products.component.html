@@ -1,6 +1,7 @@
 <div class="container">
   <div class="products">
-    <div *ngFor="let product of currentProducts">
+    <div
+      *ngFor="let product of products | getProductsForSubTab:currentSubtab">
       <app-product [productAndNumber]="product"></app-product>
     </div>
   </div>
@@ -10,7 +11,7 @@
         <li class="page-item" [class.disabled]="currentSubtab == 1">
           <a class="page-link" href="#" (click)="previousSubtab()">Previous</a>
         </li>
-        <li class="page-item" *ngFor="let subtabNo of subtabs" [class.active] = "currentSubtab == subtabNo">
+        <li class="page-item" *ngFor="let subtabNo of subtabs" [class.active]="currentSubtab == subtabNo">
           <a class="page-link" (click)="reloadSubtab(subtabNo)" href="#">{{subtabNo}}</a>
         </li>
         <li class="page-item" [class.disabled]="currentSubtab == subtabs.length">

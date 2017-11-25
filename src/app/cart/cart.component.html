@@ -10,14 +10,36 @@
         <th scope="col"></th>
         </thead>
         <tbody>
-        <tr *ngFor="let product of products.keys()">
-          <td>{{products.get(product)}}</td>
+        <tr *ngFor="let product of products">
+          <td>{{idsMap.get(product.id)}}</td>
           <td colspan="3">{{product.name}}</td>
           <td>{{product.price}}</td>
-          <td>{{products.get(product) * product.price}}</td>
+          <td>{{idsMap.get(product.id) * product.price}}</td>
+          <td class="remove-button-cell">
+            <button class="btn btn-primary remove-button" (click)="remove(product)">Usuń</button>
+          </td>
         </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4 offset-4">
+      <div class="row" *ngIf="this.products.length > 0">
+        <div class="col-6">
+          <a routerLink="/"><button class="btn btn-primary">Kontynuuj zakupy</button></a>
+        </div>
+        <div class="col-6">
+          <a routerLink="/makeOrder"><button class="btn btn-primary">Złóż zamówienie</button></a>
+        </div>
+      </div>
+      <div class="row" style="text-align: center" *ngIf="this.products.length == 0">
+        <div class="col-12">
+          <a routerLink="/">
+            <button class="btn btn-primary">Kontynuuj zakupy</button>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
