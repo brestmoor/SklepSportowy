@@ -39,4 +39,6 @@ export class CartComponent implements OnInit {
       .length
   }
 
+
+
 }

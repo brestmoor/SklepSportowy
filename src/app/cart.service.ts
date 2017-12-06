@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Subject} from "rxjs/Subject";
 import {Product} from "./types";
 import * as _ from "underscore";
@@ -23,6 +23,11 @@ export class CartService {
     let index = this.products.findIndex(product => product.id == toBeRemoved.id);
     this.products.splice(index, 1);
     this.itemRemovedSource.next(toBeRemoved);
+  }
+
+  public emptyOut() {
+    this.products.forEach(product => this.itemRemovedSource.next(product))
+    this.products = [];
   }
 
   public getNumber(product: Product) {

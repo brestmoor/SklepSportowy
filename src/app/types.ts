@@ -12,6 +12,6 @@ export class ProductAndNumber {
 }
 
 export class User {
-  constructor(public nameAndSurname: string, public address: string) {
+  constructor(public name: string, public address: string) {
   }
 }
